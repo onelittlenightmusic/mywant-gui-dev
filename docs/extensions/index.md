@@ -44,6 +44,8 @@ Registering twice with the same `id` does nothing the second time.
 | `settingsSection` | — | A section of the Settings modal |
 | `groupDetails` | `groupName` | Below a constellation's details |
 | `themeMarks` | `themeName`, `color` | In a theme's header, after its count |
+| `characterDetails` | `character` | A character's sheet on the Characters page, after the colour and the shape |
+| `characterDisplay` | `display`, `put` | A character's Display tab, after Icon Style; `put(patch)` saves part of the display |
 
 Several extensions may fill the same slot; they are drawn in registration order.
 
@@ -64,8 +66,10 @@ exception — a design that registers late is picked up.)
 ## The canvas extension <Badge type="warning" text="mywant-guiex" />
 
 mywant-guiex is an extension of this kind, installed beside the app. It adds the
-`/canvas`, `/kata`, `/characters` and related pages and their menu entries,
-fills the header's mode lamp, the interact overlay and the Settings section, and
+`/canvas`, `/kata` and related pages and their menu entries,
+fills the header's mode lamp, the interact overlay and the Settings section,
+puts the canvas's choices (canvas design, tile and aura, speeds) into the
+Characters page through `characterDetails` and `characterDisplay`, and
 answers the header's bubble with the robot. Its extension build
 (`vite.extension.config.ts`) produces one IIFE, `guiex.js`, plus `guiex.css`.
 Imports of the app's modules (`@/…`) are not bundled: they become lookups in

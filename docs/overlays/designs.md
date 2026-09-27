@@ -70,8 +70,7 @@ Registering an id that already exists replaces it — `grid` included.
 
 ## Choosing a design
 
-The choice is a display setting of the person's character, like the canvas's
-design, stored at `display.ext.overlay.design`. A choice naming a design that is
+The choice is a display setting of the person's character, stored at `display.ext.overlay.design`. A choice naming a design that is
 not installed falls back to `grid`.
 
 ```ts
@@ -135,11 +134,12 @@ look as the fallback:
 Custom properties cross into shadow roots, so the pill (in its own shadow root)
 and the inspector's menus (in the page) follow the same values.
 
-## The picker <Badge type="warning" text="mywant-guiex" />
+## The pickers
 
-The canvas extension's character display editor lists every registered design
-under **Overlay Design**, next to **Canvas Design**, and re-renders when a design
-registers late:
+Two places list every registered design and save the same choice:
+**Settings → Overlay Design** (`useOverlayDesignChoice`, which falls back to
+the browser when no character is chosen) and a character's **Display** tab on
+the Characters page. Both re-render when a design registers late:
 
 ```tsx
 useEffect(() => onOverlayDesignRegistered(() => force(v => v + 1)), []);

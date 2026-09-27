@@ -6,7 +6,7 @@ and section says which one it is about with a label.
 | Label | Layer | What it is |
 |---|---|---|
 | <Badge type="tip" text="mywant-gui" /> | The public app | The GUI server, the `mywant-gui` CLI and the web app without the canvas. Open source: [onelittlenightmusic/mywant-gui](https://github.com/onelittlenightmusic/mywant-gui). |
-| <Badge type="warning" text="mywant-guiex" /> | The canvas extension | The canvas (the board), kata, characters, the robot cursor and the bookmarklet. Built as an extension of mywant-gui and installed beside it. |
+| <Badge type="warning" text="mywant-guiex" /> | The canvas extension | The canvas (the board), kata, the robot cursor and the bookmarklet. Built as an extension of mywant-gui and installed beside it. |
 
 ## How the two fit
 

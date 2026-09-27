@@ -146,7 +146,10 @@ curl -s localhost:8082/api/v1/gui-extensions    # []
 ```
 
 Mono is in Settings there too. Without a character chosen in that browser the
-choice is kept in the browser, and Settings says so under the buttons.
+choice is kept in the browser, and Settings says so under the buttons. Choose
+one on the **Characters** page (**Use as my CursorMan**) and the choice is
+saved on that character instead — the Characters page is part of the app, so
+this works without the canvas as well.
 
 ## 3. Publish
 
@@ -199,11 +202,12 @@ mywant custom uninstall mywant-design-mono
 
 A choice naming a design that is no longer installed falls back to Grid.
 
-## The picker in the canvas <Badge type="warning" text="mywant-guiex" />
+## The picker on the Characters page
 
-With the canvas installed, a character's display settings list the same
-designs under **Overlay Design**, next to **Canvas Design**. Both pickers save
-the same choice.
+A character's **Display** tab (Characters → a character → Display) lists the
+same designs under **Overlay Design**. It and Settings save the same choice.
+With the canvas installed <Badge type="warning" text="mywant-guiex" />, the tab
+also has **Canvas Design** beside it.
 
 ## When it does not show up
 

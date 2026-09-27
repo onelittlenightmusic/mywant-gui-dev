@@ -55,15 +55,14 @@ curl -s localhost:8081/api/v1/gui-extensions   # lists overlay-flat
 
 ## 5. Pick it
 
-Open your character's display settings and choose **Flat** under
-**Overlay Design** <Badge type="warning" text="mywant-guiex" />. Every overlay
+Open **Settings → Overlay Design**, or your character's **Display** tab on the
+**Characters** page, and choose **Flat**. Every overlay
 changes at once — the card long-press menus, Shift+Enter, the yes/no questions
 and the board's bubbles — because every one of them is drawn from the
 [overlay library](/overlays/).
 
-Without the canvas extension there is no display editor; set
-`display.ext.overlay.design` on the character to `"flat"` through the API, or
-have your extension offer its own picker (`settingsSection` slot).
+The choice is stored on the character, at `display.ext.overlay.design`; with
+no character chosen in the browser, Settings keeps it in the browser instead.
 
 ## Making it yours
 
