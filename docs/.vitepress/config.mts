@@ -17,6 +17,7 @@ export default defineConfig({
         items: [
           { text: 'MyWant guide', link: 'https://onelittlenightmusic.github.io/MyWant/?lang=en' },
           { text: 'mywant-gui guide', link: 'https://onelittlenightmusic.github.io/mywant-gui/?lang=en' },
+          { text: 'mywant-guiex guide', link: 'https://onelittlenightmusic.github.io/mywant-guiex-guide/?lang=en' },
         ],
       },
     ],
@@ -52,6 +53,7 @@ export default defineConfig({
         items: [
           { text: 'MyWant guide', link: 'https://onelittlenightmusic.github.io/MyWant/?lang=en' },
           { text: 'mywant-gui guide', link: 'https://onelittlenightmusic.github.io/mywant-gui/?lang=en' },
+          { text: 'mywant-guiex guide', link: 'https://onelittlenightmusic.github.io/mywant-guiex-guide/?lang=en' },
         ],
       },
     ],
