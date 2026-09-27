@@ -12,6 +12,9 @@ hero:
     - theme: alt
       text: The overlay library
       link: /overlays/
+    - theme: alt
+      text: New to MyWant? Start here
+      link: https://onelittlenightmusic.github.io/mywant-gui/?lang=en
 
 features:
   - title: One overlay library

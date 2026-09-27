@@ -11,6 +11,14 @@ export default defineConfig({
       { text: 'Guide', link: '/guide/layers' },
       { text: 'Overlays', link: '/overlays/' },
       { text: 'Extensions', link: '/extensions/' },
+      {
+        // The beginner's guides, which link back here from their menus.
+        text: 'Guides',
+        items: [
+          { text: 'MyWant guide', link: 'https://onelittlenightmusic.github.io/MyWant/?lang=en' },
+          { text: 'mywant-gui guide', link: 'https://onelittlenightmusic.github.io/mywant-gui/?lang=en' },
+        ],
+      },
     ],
     sidebar: [
       {
@@ -36,6 +44,13 @@ export default defineConfig({
         items: [
           { text: 'Writing an extension', link: '/extensions/' },
           { text: 'Runtime extensions', link: '/extensions/runtime' },
+        ],
+      },
+      {
+        text: 'Beginner guides',
+        items: [
+          { text: 'MyWant guide', link: 'https://onelittlenightmusic.github.io/MyWant/?lang=en' },
+          { text: 'mywant-gui guide', link: 'https://onelittlenightmusic.github.io/mywant-gui/?lang=en' },
         ],
       },
     ],
