@@ -5,7 +5,9 @@ box. This tutorial builds **Flat** — a light card, cells as separate rounded
 tiles with a gap between them, solid colours, words in their own case — and
 ships it as an extension that installs beside the GUI with no build step.
 
-The finished extension is in this site's repository:
+A design can also be shipped as a design custom, installed with
+`mywant custom install owner/repo` — see [Tutorial: a design plugin](/overlays/design-plugin),
+which compares the two. The finished extension is in this site's repository:
 [`examples/overlay-flat`](https://github.com/onelittlenightmusic/mywant-gui-dev/tree/main/examples/overlay-flat).
 
 ```

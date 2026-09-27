@@ -35,6 +35,7 @@ export default defineConfig({
           { text: 'Tones', link: '/overlays/tones' },
           { text: 'Designs', link: '/overlays/designs' },
           { text: 'Tutorial: a flat design', link: '/overlays/flat' },
+          { text: 'Tutorial: a design plugin', link: '/overlays/design-plugin' },
           { text: 'The build check', link: '/overlays/check' },
           { text: 'Bubbles on the board', link: '/guiex/bubbles' },
         ],

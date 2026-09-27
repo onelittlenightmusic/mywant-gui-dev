@@ -48,7 +48,9 @@ a design can restyle only what it cares about.
 
 ## Registering a design
 
-From an extension — the usual way:
+From a design custom — one `plugin.js`, installed with `mywant custom install`
+(see [Tutorial: a design plugin](/overlays/design-plugin)) — or from an
+extension:
 
 ```ts
 registerExtension({ id: 'my-look', overlayDesigns: [myDesign] });
