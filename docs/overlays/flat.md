@@ -30,6 +30,10 @@ publishes on `window.__mywantModules` before it loads any extension:
 
 <<< @/../examples/overlay-flat/overlay-flat.js
 
+The `portable` block is the same look as values: the browser extension and the
+bookmarklet draw their menus with it on other people's pages, where
+`overlay-flat.css` is not loaded (see [Designs](/overlays/designs#outside-the-app-portable-values)).
+
 ## 3. The stylesheet
 
 The classes the design names. The app's Tailwind build would not contain them,

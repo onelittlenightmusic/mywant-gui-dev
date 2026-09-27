@@ -39,6 +39,25 @@
     input: 'mwf-input',
     enterAnimation: 'mwf-in 120ms ease-out forwards',
     cellEnterAnimation: 'mwf-cell-in 140ms ease-out both',
+    // The same look as values, for menus drawn where this stylesheet is not
+    // loaded — the browser extension's and the bookmarklet's, on other pages.
+    // Stored with the choice; they apply it as CSS custom properties.
+    portable: {
+      tones: {
+        confirm: '#10b981', cancel: '#94a3b8', danger: '#ef4444', primary: '#3b82f6',
+        caution: '#f59e0b', info: '#0ea5e9', accent: '#6366f1', special: '#8b5cf6', muted: '#64748b',
+      },
+      surface: '#ffffff',
+      outline: '#e2e8f0',
+      ink: '#334155',
+      radius: 14,
+      cellRadius: 10,
+      cellGap: 3,
+      labelTransform: 'none',
+      labelWeight: 600,
+      labelSize: 10,
+      backdrop: 'rgba(255,255,255,.6)',
+    },
   };
 
   var registry = window.__mywantModules && window.__mywantModules['@/extensions/registry'];

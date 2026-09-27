@@ -29,6 +29,7 @@ interface OverlayDesign {
   input: string;                         // a text field in an overlay
   enterAnimation: string;                // CSS animation shorthand
   cellEnterAnimation: string;
+  portable?: OverlayPortableStyle;       // the same look as plain CSS values (below)
 }
 ```
 
@@ -90,6 +91,47 @@ const design = useOverlayDesign();      // re-renders on a change
 
 overlayDesign();                        // the same, outside a React render
 ```
+
+## Outside the app: portable values <Badge type="tip" text="mywant-gui" />
+
+Class names only mean something inside the app. Overlays drawn on other
+people's pages — the browser extension's and the bookmarklet's menus — need the
+look as values, so a design can carry them:
+
+```ts
+interface OverlayPortableStyle {
+  tones: Record<OverlayTone, string>;   // CSS colours
+  surface: string; outline: string; ink: string;   // the box: fill, outline, words
+  radius: number;                        // box corner, px
+  cellRadius: number; cellGap: number;   // 0 and 0 are full-bleed tiles
+  labelTransform: 'uppercase' | 'none'; labelWeight: number; labelSize: number;
+  backdrop: string;                      // laid over a page behind a dialog
+}
+```
+
+`withOverlayDesign` stores the chosen design's `portable` with the choice
+(`display.ext.overlay.portable`), so anything that can read the character can
+draw its menus the same way without knowing any design by name. A design
+without `portable` stores the grid's. Read it back with
+`portableOverlayStyleOf(display)`.
+
+## In the extension and the bookmarklet <Badge type="warning" text="mywant-guiex" />
+
+The control pill reads the viewer's character anyway (who they are, their
+colour). It writes the stored portable values onto the page's root as custom
+properties — `--mwo-confirm` … `--mwo-muted`, `--mwo-surface`, `--mwo-outline`,
+`--mwo-ink`, `--mwo-radius`, `--mwo-cell-radius`, `--mwo-cell-gap`,
+`--mwo-label-transform`, `--mwo-label-weight`, `--mwo-label-size`,
+`--mwo-backdrop` — and every menu the extension draws reads them with the grid
+look as the fallback:
+
+```css
+.mwc-tile-rose { background: var(--mwo-danger, rgba(190,18,60,.9)); }
+.mwc-actions   { gap: var(--mwo-cell-gap, 0px); padding: var(--mwo-cell-gap, 0px); }
+```
+
+Custom properties cross into shadow roots, so the pill (in its own shadow root)
+and the inspector's menus (in the page) follow the same values.
 
 ## The picker <Badge type="warning" text="mywant-guiex" />
 
