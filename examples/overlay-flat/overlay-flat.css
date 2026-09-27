@@ -1,0 +1,81 @@
+/*
+ * overlay-flat — the look behind the class names overlay-flat.js registers.
+ *
+ * Flat: a light card instead of a dark box, cells as separate rounded tiles
+ * with a gap between them, solid colours, no transparency, no glow, words in
+ * their own case. The app puts `dark` on <html> in dark mode.
+ */
+:root {
+  --mwf-surface: #ffffff;
+  --mwf-outline: #e2e8f0;
+  --mwf-ink: #334155;
+  --mwf-field: #f8fafc;
+  --mwf-backdrop: rgba(255, 255, 255, 0.6);
+}
+.dark {
+  --mwf-surface: #1e293b;
+  --mwf-outline: #334155;
+  --mwf-ink: #e2e8f0;
+  --mwf-field: #0f172a;
+  --mwf-backdrop: rgba(15, 23, 42, 0.6);
+}
+
+/* The box, and its surface for other shapes (a pill). */
+.mwf-surface { background: var(--mwf-surface); border: 1px solid var(--mwf-outline); }
+.mwf-frame {
+  background: var(--mwf-surface);
+  border: 1px solid var(--mwf-outline);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.12);
+}
+.mwf-backdrop { background: var(--mwf-backdrop); backdrop-filter: blur(2px); }
+
+/* Cells: separate tiles with a gap, instead of one full-bleed block. */
+.mwf-cell {
+  margin: 3px;
+  width: calc(100% - 6px) !important;
+  height: calc(100% - 6px) !important;
+  border-radius: 10px;
+}
+.mwf-interactive { transition: filter 120ms, transform 120ms; }
+.mwf-interactive:hover { filter: brightness(1.07); }
+.mwf-interactive:active { transform: scale(0.97); }
+.mwf-off { opacity: 0.5; }
+.mwf-disabled { background: var(--mwf-outline); opacity: 0.6; cursor: not-allowed; }
+
+/* The ring's colour is whoever holds the keys (--mw-focus-ring). */
+.mwf-focus { box-shadow: 0 0 0 3px var(--mw-focus-ring, #38bdf8); }
+
+/* Tones — solid, one step lighter than the grid's. */
+.mwf-confirm { background: #10b981; }
+.mwf-cancel  { background: #94a3b8; }
+.mwf-danger  { background: #ef4444; }
+.mwf-primary { background: #3b82f6; }
+.mwf-caution { background: #f59e0b; }
+.mwf-info    { background: #0ea5e9; }
+.mwf-accent  { background: #6366f1; }
+.mwf-special { background: #8b5cf6; }
+.mwf-muted   { background: #64748b; }
+
+/* Words. */
+.mwf-label { color: #fff; font-size: 10px; font-weight: 600; line-height: 1; }
+.mwf-header {
+  display: flex; align-items: center; gap: 6px;
+  color: var(--mwf-ink); font-size: 12px; font-weight: 600;
+}
+.mwf-input {
+  width: 100%;
+  border-radius: 8px;
+  background: var(--mwf-field);
+  border: 1px solid var(--mwf-outline);
+  padding: 4px 10px;
+  font-size: 14px;
+  color: var(--mwf-ink);
+  outline: none;
+}
+.mwf-input:focus { border-color: #0ea5e9; }
+
+/* Coming in. */
+@keyframes mwf-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+@keyframes mwf-cell-in { from { opacity: 0; transform: scale(0.94); } to { opacity: 1; transform: none; } }

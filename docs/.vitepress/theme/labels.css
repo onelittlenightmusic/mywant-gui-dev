@@ -1,0 +1,21 @@
+/*
+ * The two layer labels (see guide/layers). Badges keep VitePress's own shape;
+ * only their colours are the layers' own, so the two read apart at a glance.
+ */
+.vp-doc .VPBadge.tip {
+  /* mywant-gui — the public app */
+  border-color: transparent;
+  background-color: rgba(16, 185, 129, 0.14);
+  color: #047857;
+}
+.dark .vp-doc .VPBadge.tip { color: #34d399; }
+.vp-doc .VPBadge.warning {
+  /* mywant-guiex — the private extension */
+  border-color: transparent;
+  background-color: rgba(139, 92, 246, 0.14);
+  color: #6d28d9;
+}
+.dark .vp-doc .VPBadge.warning { color: #a78bfa; }
+
+/* A label is one word; never break it across lines (a narrow table cell did). */
+.vp-doc .VPBadge { white-space: nowrap; }

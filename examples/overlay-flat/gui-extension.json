@@ -1,0 +1,6 @@
+{
+  "name": "overlay-flat",
+  "version": "0.1.0",
+  "script": "overlay-flat.js",
+  "styles": ["overlay-flat.css"]
+}
