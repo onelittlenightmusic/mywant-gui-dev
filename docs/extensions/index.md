@@ -38,7 +38,7 @@ Registering twice with the same `id` does nothing the second time.
 | Slot | Props | Where |
 |---|---|---|
 | `appRoot` | — | Mounted once at the app root, inside the router |
-| `headerModeLamp` | `below`, `onPointerDown` | The header's mode lamp |
+| `pillCells` | `board`, `compact`, `below`, `onPointerDown` | Cells of the global control pill, before its bell (`board`: the page has a board) |
 | `interactOverlay` | `onSay` | Over the header, for things waiting on an answer |
 | `interactProviderSelect` | `open` | Beside the header's bubble |
 | `settingsSection` | — | A section of the Settings modal |
